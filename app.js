@@ -1,13 +1,16 @@
 import Koa from 'koa'
 import session from 'koa-session2'
+import staticServer from 'koa-static'
 
 import UserModel from './models/UserModel'
 
 import users from './routers/users'
 import auth from './routers/auth'
 
+const path = require('path');
 const app = new Koa();
 
+app.use(staticServer(path.join(__dirname, 'public')));
 app.use(session({
     key: 'sysu club 2016'
 }));
