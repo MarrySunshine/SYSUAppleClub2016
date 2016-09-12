@@ -12,14 +12,15 @@ const user_schema = new mongoose.Schema({
     college: String,
     phone: String,
     student_number: { type: String, unique: true },
-    interest: [String],
+    interest: String,
+    introduce: String,
     create_time: { type: Date, default: Date.now() }
 });
 
 user_schema.statics = {
-    addOne(name, gender, college, student_number, interest, phone) {
+    addOne(name, gender, college, student_number, interest, phone, introduce) {
         return new Promise(async (resolve, reject) => {
-            let user = new UserModel({name, gender, college, student_number, interest, phone});
+            let user = new UserModel({name, gender, college, student_number, interest, phone, introduce});
             user.save(error => {
                 if (error) reject('用户已存在');
                 else resolve(user);
@@ -43,7 +44,6 @@ user_schema.statics = {
                 if (users.length === 0) reject('无数据');
                 else resolve(users);
             } catch(error) {
-                console.log(error);
                 reject(error);
             }
         })

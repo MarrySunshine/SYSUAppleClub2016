@@ -2,5 +2,17 @@
   "mongodb": {
     "host": "mongodb://localhost:27017/AppleClub"
   },
-  "password": "sysuappleclub2016"
+  "password": "sysuappleclub2016",
+  "user": {
+    "gender": {
+      "male": 0,
+      "female": 1
+    },
+    "interest": {
+      "technique": 0,
+      "design": 1,
+      "secretary": 2,
+      "propaganda": 3
+    }
+  }
 }

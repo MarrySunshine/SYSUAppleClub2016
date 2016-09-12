@@ -19,9 +19,9 @@ export default router
         }
     })
     .post('/', async ctx => {
-        let { name, phone, student_number, college, gender, interest } = ctx.body;
+        let { name, phone, student_number, college, gender, interest, introduce } = ctx.body;
         try {
-            let user = await UserModel.addOne(name, gender, college, student_number, interest, phone);
+            let user = await UserModel.addOne(name, gender, college, student_number, interest, phone, introduce);
             ctx.body = { user };
         } catch (error) {
             ctx.body = { error };
