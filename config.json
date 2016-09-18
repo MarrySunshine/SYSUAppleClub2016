@@ -1,6 +1,6 @@
 {
   "mongodb": {
-    "host": "mongodb://localhost:27017/AppleClub"
+    "host": "mongodb://admin:rwnj7csggt@localhost:27017/AppleClub"
   },
   "password": "sysuappleclub2016",
   "user": {

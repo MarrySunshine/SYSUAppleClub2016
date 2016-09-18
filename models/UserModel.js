@@ -8,7 +8,7 @@ import { db } from '../modules/database'
 
 const user_schema = new mongoose.Schema({
     name: String,
-    gender: Number,
+    gender: String,
     college: String,
     phone: String,
     student_number: { type: String, unique: true },

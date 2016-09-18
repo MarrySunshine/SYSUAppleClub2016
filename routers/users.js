@@ -18,8 +18,8 @@ export default router
             ctx.body = { error };
         }
     })
-    .post('/', async ctx => {
-        let { name, phone, student_number, college, gender, interest, introduce } = ctx.body;
+    .get('/signin', async ctx => {
+        let { name, phone, student_number, college, gender, interest, introduce } = ctx.query;
         try {
             let user = await UserModel.addOne(name, gender, college, student_number, interest, phone, introduce);
             ctx.body = { user };
